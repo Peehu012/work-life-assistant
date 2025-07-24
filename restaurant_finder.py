@@ -1,10 +1,8 @@
 # restaurant_finder.py
-import os
-from dotenv import load_dotenv
+import streamlit as st
 
-load_dotenv()
+api_key = st.secrets["GOOGLE_MAPS_API_KEY"]
 
-api_key = os.getenv("GOOGLE_MAPS_API_KEY")
 if not api_key:
     raise ValueError("GOOGLE_MAPS_API_KEY not found. Check your .env file or environment.")
 
